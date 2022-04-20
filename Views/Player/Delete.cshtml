@@ -1,0 +1,57 @@
+@model FootballWebApp.DTo.PlayerDto
+
+
+<h3>Are you sure you want to delete transfer player?</h3>
+<div style="font-size: 130%;">
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            FirstName:
+        </dt>
+        <dd class="col-sm-10">
+            @Model.FirstName
+        </dd>
+        <dt class="col-sm-2">
+            LastName:
+        </dt>
+        <dd class="col-sm-10">
+            @Model.LastName
+        </dd>
+         <dt class="col-sm-2">
+            Email:
+        </dt>
+        <dd class="col-sm-10">
+            @Model.Email
+        </dd>
+         <dt class="col-sm-2">
+            Jersey Number:
+        </dt>
+        <dd class="col-sm-10">
+            @Model.JerseyNumber
+        </dd>
+         <dt class="col-sm-2">
+            Strong Foot:
+        </dt>
+        <dd class="col-sm-10">
+            @Model.StrongFoot
+        </dd>
+         <dt class="col-sm-2">
+            Age:
+        </dt>
+        <dd class="col-sm-10">
+            @Model.Age
+        </dd>
+         <dt class="col-sm-2">
+            Playing Position:
+        </dt>
+        <dd class="col-sm-10">
+            @Model.PlayingPosition
+        </dd>
+        
+    </dl>
+
+    <form asp-action="Delete">
+        <input type="submit" value="Delete" class="btn btn-danger" /> |
+        <a asp-action="Index">Back to List</a>
+    </form>
+</div>

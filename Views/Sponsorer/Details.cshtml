@@ -1,0 +1,46 @@
+@model FootballWebApp.DTo.SponsorerDto
+
+
+<dl class="row">
+        <dt class="col-sm-2">
+            Name:
+        </dt>
+        <dd class="col-sm-10">
+            @Model.Name
+        </dd>
+        <dt class="col-sm-2">
+            NetWorth:
+        </dt>
+        <dd class="col-sm-10">
+            @Model.NetWorth
+        </dd>
+           <dt class="col-sm-2">
+            Registration Number:
+        </dt>
+        <dd class="col-sm-10">
+            @Model.RegistrationNumber
+        </dd>
+         <dt class="col-sm-2">
+            Number Of Companies:
+        </dt>
+        <dd class="col-sm-10">
+            @Model.SponsorerNumberOfCompanies
+        </dd>
+         <dt>  Clubs Sponsored : </dt>
+          @foreach (var item in   Model.Clubs)
+          {
+            <dd> @item.ClubName</dd> <br>
+            
+        }
+
+        
+
+</dl>
+
+<button style="background-color:darkblue;"><a asp-action="Index">Back to List</a></button>
+© 2021 GitHub, Inc.
+Terms
+Privacy
+Security
+Status
+Docs

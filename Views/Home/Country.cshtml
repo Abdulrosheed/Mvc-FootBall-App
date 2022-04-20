@@ -1,0 +1,4 @@
+@model FootballWebApp.Models.CountryModel
+@using FootballWebApp
+<p>Welcome</p>
+<select asp-for = "Country" asp-items="Html.GetEnumSelectList<Country>()"></select>

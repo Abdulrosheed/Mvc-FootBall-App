@@ -1,0 +1,75 @@
+@model IEnumerable<FootballWebApp.DTo.SponsorerDto>
+
+
+
+
+<div class="card-header" style="background-color:midnightblue;">
+    <div class="card-title">
+        <h1 class="text-center">Sponsorer</h1>
+    </div>
+</div>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Id)
+            </th>
+
+            <th>
+                @Html.DisplayNameFor(model => model.Name)
+            </th>
+
+            <th>
+                @Html.DisplayNameFor(model => model.NetWorth)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.RegistrationNumber)
+            </th>
+
+          
+
+
+
+            <th>
+                Update
+            </th>
+            <th>
+                Details
+            </th>
+            <th>
+                Delete
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var sponsorer in Model)
+        {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => sponsorer.Id)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => sponsorer.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => sponsorer.NetWorth)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => sponsorer.RegistrationNumber)
+            </td>
+         
+            <td>
+                <a asp-action="Update" asp-route-id="@sponsorer.Id">Update</a>
+            </td>
+            <td>
+                <a asp-action="Details" asp-route-id="@sponsorer.Id">Details</a>
+            </td>
+            <td>
+                <a asp-action="Delete" asp-route-id="@sponsorer.Id">Delete</a>
+            </td>
+        </tr>
+        }
+    </tbody>
+</table>
+<button style="background-color:wheat;"><a asp-controller="Sponsorer" asp-action="Create">Create Sponsorer</a> </button>

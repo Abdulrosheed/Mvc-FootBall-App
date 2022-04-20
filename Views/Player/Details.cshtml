@@ -1,0 +1,74 @@
+
+   
+@model FootballWebApp.DTo.PlayerDto
+
+
+<dl class="row">
+ <dt class="col-sm-2">
+            FirstName:
+        </dt>
+        <dd class="col-sm-10">
+            @Model.FirstName
+        </dd>
+        <dt class="col-sm-2">
+            LastName:
+        </dt>
+        <dd class="col-sm-10">
+            @Model.LastName
+        </dd>
+         <dt class="col-sm-2">
+            Email:
+        </dt>
+        <dd class="col-sm-10">
+            @Model.Email
+        </dd>
+         <dt class="col-sm-2">
+            Jersey Number:
+        </dt>
+        <dd class="col-sm-10">
+            @Model.JerseyNumber
+        </dd>
+         <dt class="col-sm-2">
+            Strong Foot:
+        </dt>
+        <dd class="col-sm-10">
+            @Model.StrongFoot
+        </dd>
+         <dt class="col-sm-2">
+            Age:
+        </dt>
+        <dd class="col-sm-10">
+            @Model.Age
+        </dd>
+         <dt class="col-sm-2">
+            Playing Position:
+        </dt>
+        <dd class="col-sm-10">
+            @Model.PlayingPosition
+        </dd>
+        <dt class="col-sm-2">
+            Club Name:
+        </dt>
+        <dd class="col-sm-10">
+            @Model.ClubName
+        </dd>
+         <dt class="col-sm-2">
+            Player Photo:
+        </dt>
+        <dd class=" col-sm-10">
+        <img class="card-img" style="height:200px; width:200px" src="~/PlayerPhoto/@Model.PlayerPhoto" />
+        <a href="~/PlayerPhoto/@Model.PlayerPhoto" download="@Model.PlayerPhoto"><input class="btn btn-outline-primary" type="button" value="Download Photo" /></a>
+
+        </dd>
+        
+
+
+</dl>
+
+<button style="background-color:darkblue;"><a asp-action="Index">Back to List</a></button>
+© 2021 GitHub, Inc.
+Terms
+Privacy
+Security
+Status
+Docs

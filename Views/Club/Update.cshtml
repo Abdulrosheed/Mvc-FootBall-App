@@ -1,0 +1,84 @@
+
+   
+@model FootballWebApp.DTo.UpdateClubRequestModel
+
+
+
+
+
+<div class="container">
+    <div class="row justify-content-center">
+        <div class=" card col-md-6">
+            <div class="card-body ">
+                <div class="bg-light">
+                    <h1 class="tagcolor" style="color:mediumblue">Author</h1>
+                    <p class="tagcolor" style="color:mediumblue">Please fill in this form to Update this Department.</p>
+                    <hr class="tagcolor" style="color:mediumblue">
+
+                </div>
+                <form asp-action="Update">
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+                    <div class="form-row">
+
+                        <div class="form-group col-sm-6">
+                            <label asp-for="StadiumName" class="control-label"></label>
+                            <input asp-for="StadiumName" class="form-control" />
+                            <span asp-validation-for="ClubName" class="text-danger"></span>
+                        </div>
+                        <div class="form-group col-sm-6">
+                            <label asp-for="ClubManagerName" class="control-label"></label>
+                            <input asp-for="ClubManagerName" class="form-control" />
+                            <span asp-validation-for="ClubManagerName" class="text-danger"></span>
+                        </div>
+                          <div class="form-group col-sm-6">
+                            <label asp-for="ClubCoachName" class="control-label"></label>
+                            <input asp-for="ClubCoachName" class="form-control" />
+                            <span asp-validation-for="ClubCoachName" class="text-danger"></span>
+                        </div>
+                          <div class="form-group col-sm-6">
+                            <label asp-for="ClubNickName" class="control-label"></label>
+                            <input asp-for="ClubNickName" class="form-control" />
+                            <span asp-validation-for="ClubNickName" class="text-danger"></span>
+                        </div>
+                          <div class="form-group col-sm-6">
+                            <label asp-for="StadiumCapacity" class="control-label"></label>
+                            <input asp-for="StadiumCapacity" class="form-control" />
+                            <span asp-validation-for="StadiumCapacity" class="text-danger"></span>
+                        </div>
+                          <div class="form-group col-sm-6">
+                            <label asp-for="ClubBiggestRival" class="control-label"></label>
+                            <input asp-for="ClubBiggestRival" class="form-control" />
+                            <span asp-validation-for="ClubBiggestRival" class="text-danger"></span>
+                        </div>
+
+                    </div>
+                       <div class="form-row">
+                        <div class="col-md-6" style="margin-top: 20px; font-size: larger; font-weight: bold; color: darkcyan">
+                            <label  class="control-label">Sponsorer</label>
+                            <select asp-for="SponsorerIds" class="form-control" asp-items="ViewBag.Sponsorer" required>
+                                <option value="">--Select Sponsorer--</option>
+                            </select>
+                        </div>
+                       
+                    </div>
+
+
+                    <div class="form-group ">
+                        <input href="#myModal" type="submit" value="Submit" class="btn btn-success trigger-btn col-sm-12" data-toggle="modal" />
+                    </div>
+
+                </form>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+
+
+
+
+    @section Scripts {
+        @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    }

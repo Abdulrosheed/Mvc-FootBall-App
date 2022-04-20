@@ -1,0 +1,93 @@
+
+   
+
+@model IEnumerable< FootballWebApp.DTo.ClubDto>
+
+
+
+
+<div class="card-header" style="background-color:grey;">
+    <div class="card-title">
+        <h1 class="text-center">Clubs</h1>
+    </div>
+</div>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Id)
+            </th>
+
+            <th>
+                @Html.DisplayNameFor(model => model.ClubName)
+            </th>
+
+            <th>
+                @Html.DisplayNameFor(model => model.StadiumName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ClubCoachName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ClubNumberOfTrophies)
+            </th>
+            
+             <th>
+                @Html.DisplayNameFor(model => model.StadiumCapacity)
+            </th>
+         
+
+
+
+
+            <th>
+                Update
+            </th>
+            <th>
+                Details
+            </th>
+            <th>
+                Delete
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var department in Model)
+        {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => department.Id)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => department.ClubName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => department.StadiumName)
+            </td>
+              <td>
+                @Html.DisplayFor(modelItem => department.ClubCoachName)
+            </td>
+              <td>
+                @Html.DisplayFor(modelItem => department.ClubNumberOfTrophies)
+            </td>
+             
+               <td>
+                @Html.DisplayFor(modelItem => department.StadiumCapacity)
+            </td>
+          
+
+            <td>
+                <a asp-action="Update" asp-route-id="@department.Id">Update</a>
+            </td>
+            <td>
+                <a asp-action="Details" asp-route-id="@department.Id">Details</a>
+            </td>
+            <td>
+                <a asp-action="Delete" asp-route-id="@department.Id">Delete</a>
+            </td>
+        </tr>
+        }
+    </tbody>
+</table>
+<button style="background-color:wheat;"><a asp-controller="Club" asp-action="Create">Register Club</a> </button>

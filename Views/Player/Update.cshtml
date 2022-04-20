@@ -1,0 +1,69 @@
+@model FootballWebApp.DTo.UpdatePlayerRequestModel
+
+
+
+
+
+<div class="container">
+    <div class="row justify-content-center">
+        <div class=" card col-md-6">
+            <div class="card-body ">
+                <div class="bg-light">
+                    <h1 class="tagcolor" style="color:mediumblue">Author</h1>
+                    <p class="tagcolor" style="color:mediumblue">Please fill in this form to Update this Player.</p>
+                    <hr class="tagcolor" style="color:mediumblue">
+
+                </div>
+                <form asp-action="Update">
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+                    <div class="form-row">
+
+                        <div class="form-group col-sm-6">
+                            <label asp-for="FirstName" class="control-label"></label>
+                            <input asp-for="FirstName" class="form-control" />
+                            <span asp-validation-for="FirstName" class="text-danger"></span>
+                        </div>
+                        <div class="form-group col-sm-6">
+                            <label asp-for="LastName" class="control-label"></label>
+                            <input asp-for="LastName" class="form-control" />
+                            <span asp-validation-for="LastName" class="text-danger"></span>
+                        </div>
+                          <div class="form-group col-sm-6">
+                            <label asp-for="JerseyNumber" class="control-label"></label>
+                            <input asp-for="JerseyNumber" class="form-control" />
+                            <span asp-validation-for="JerseyNumber" class="text-danger"></span>
+                        </div>
+                          <div class="form-group col-sm-6">
+                            <label asp-for="PlayingPosition" class="control-label"></label>
+                            <input asp-for="PlayingPosition" class="form-control" />
+                            <span asp-validation-for="PlayingPosition" class="text-danger"></span>
+                        </div>
+                          <div class="form-group col-sm-6">
+                            <label asp-for="Email" class="control-label"></label>
+                            <input asp-for="Email" class="form-control" />
+                            <span asp-validation-for="Email" class="text-danger"></span>
+                        </div>
+                       
+
+                    </div>
+
+
+                    <div class="form-group ">
+                        <input href="#myModal" type="submit" value="Submit" class="btn btn-success trigger-btn col-sm-12" data-toggle="modal" />
+                    </div>
+
+                </form>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+
+
+
+
+    @section Scripts {
+        @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    }

@@ -1,0 +1,81 @@
+@model FootballWebApp.DTo.ClubDto
+
+
+<dl class="row">
+    <dt class="col-sm-2">
+        Name:
+    </dt>
+    <dd class="col-sm-10">
+        @Model.ClubName
+    </dd>
+    <dt class="col-sm-2">
+        Coach Name:
+    </dt>
+    <dd class="col-sm-10">
+        @Model.ClubCoachName
+    </dd>
+    <dt class="col-sm-2">
+        Manager Name:
+    </dt>
+    <dd class="col-sm-10">
+        @Model.ClubManagerName
+    </dd>
+    <dt class="col-sm-2">
+        Stadium Capacity:
+    </dt>
+    <dd class="col-sm-10">
+        @Model.StadiumCapacity
+    </dd>
+    <dt class="col-sm-2">
+        Club Number Of Trophies:
+    </dt>
+    <dd class="col-sm-10">
+        @Model.ClubNumberOfTrophies
+    </dd>
+    <dt class="col-sm-2">
+        Stadium Name:
+    </dt>
+    <dd class="col-sm-10">
+        @Model.StadiumName
+    </dd>
+    <dt class="col-sm-2">
+        Club Foundation Date:
+    </dt>
+    <dd class="col-sm-10">
+        @Model.ClubFoundationDate
+    </dd>
+    <dt class="col-sm-2">
+        Club Biggest Rival:
+    </dt>
+    <dd class="col-sm-10">
+        @Model.ClubBiggestRival
+    </dd>
+    <dt class="col-sm-2">
+        Club NickName:
+    </dt>
+    <dd class="col-sm-10">
+        @Model.ClubNickName
+    </dd>
+
+    <dt class="col-sm-2">Sponsorers</dt>
+
+    <dd class="col-sm-10">
+        @string.Join(',', Model.Sponsorers.Select(s => s.Name))
+    </dd>
+
+    <dt class="col-sm-2">Players</dt>
+    @if(Model.Players.Count != 0)
+    {
+        
+        <dd class="col-sm-10"> @Model.Players[0].FirstName @Model.Players[0].JerseyNumber</dd>
+        @for (var i = 1; i < @Model.Players.Count; i++)
+        {
+            <dt class="col-sm-2"> </dt>
+            <dd class="col-sm-10">@Model.Players[i].FirstName @Model.Players[i].JerseyNumber</dd>
+        }
+    }
+    
+
+</dl>
+
+<button style="background-color:darkblue;"><a asp-action="Index">Back to List</a></button>
